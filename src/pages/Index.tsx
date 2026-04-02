@@ -17,10 +17,8 @@ const Index = () => (
     <MissionMapPanel />
     <PodSection />
     <HiringPipeline />
-    <div className="container mx-auto px-4 lg:px-6 py-6 grid lg:grid-cols-2 gap-6">
-      <TimelineFeed />
-      <ImpactMetrics />
-    </div>
+    <TimelineFeed />
+    <ImpactMetrics />
     <ArchitectureFlow />
     <FooterNote />
   </div>
