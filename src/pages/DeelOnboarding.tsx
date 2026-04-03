@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, FileText, CreditCard, UserCheck, CheckCircle } from "lucide-react";
 import { hiringPipeline, hiringStages } from "@/data/mockData";
@@ -7,7 +8,7 @@ import { hiringPipeline, hiringStages } from "@/data/mockData";
 const stageIcons = [FileText, FileText, UserCheck, Shield, CreditCard];
 
 const DeelOnboarding = () => (
-  <div className="min-h-screen bg-background">
+  <PageTransition><div className="min-h-screen bg-background">
     <Header />
     <div className="container mx-auto px-4 lg:px-6 py-8">
       <Link to="/" className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground mb-6 transition-colors">
@@ -80,7 +81,7 @@ const DeelOnboarding = () => (
         </div>
       </AnimatedSection>
     </div>
-  </div>
+  </div></PageTransition>
 );
 
 export default DeelOnboarding;

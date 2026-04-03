@@ -1,10 +1,12 @@
-import { Globe, Plus, Rocket, Users, ChevronDown } from "lucide-react";
+import { Globe, Plus, Rocket, Users, ChevronDown, Sun, Moon, Settings } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useTheme } from "@/components/ThemeProvider";
 
 const Header = () => {
   const now = new Date();
   const timeStr = now.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit", hour12: false });
   const dateStr = now.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="glass sticky top-0 z-50 border-b border-border/50">
@@ -40,6 +42,16 @@ const Header = () => {
 
         {/* Right */}
         <div className="flex items-center gap-2">
+          <button
+            onClick={toggleTheme}
+            className="flex items-center justify-center rounded-lg border border-border bg-muted/30 p-1.5 text-muted-foreground hover:text-foreground transition-colors"
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? <Sun className="h-3.5 w-3.5" /> : <Moon className="h-3.5 w-3.5" />}
+          </button>
+          <Link to="/settings" className="flex items-center justify-center rounded-lg border border-border bg-muted/30 p-1.5 text-muted-foreground hover:text-foreground transition-colors">
+            <Settings className="h-3.5 w-3.5" />
+          </Link>
           <button className="hidden sm:flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors">
             <Plus className="h-3.5 w-3.5" /> Create Mission
           </button>

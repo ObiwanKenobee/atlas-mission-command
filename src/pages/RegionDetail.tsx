@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { ArrowLeft, MapPin, Users, Target, Shield } from "lucide-react";
 import { pods, deploymentZones, hiringPipeline } from "@/data/mockData";
 
@@ -14,18 +15,20 @@ const RegionDetail = () => {
 
   if (!zone) {
     return (
-      <div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <p className="text-muted-foreground">Region not found.</p>
-          <Link to="/" className="text-primary text-sm mt-4 inline-block hover:underline">← Back to Mission Control</Link>
+      <PageTransition>
+        <div className="min-h-screen bg-background">
+          <Header />
+          <div className="container mx-auto px-4 py-20 text-center">
+            <p className="text-muted-foreground">Region not found.</p>
+            <Link to="/" className="text-primary text-sm mt-4 inline-block hover:underline">← Back to Mission Control</Link>
+          </div>
         </div>
-      </div>
+      </PageTransition>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <PageTransition><div className="min-h-screen bg-background">
       <Header />
       <div className="container mx-auto px-4 lg:px-6 py-8">
         <Link to="/" className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground mb-6 transition-colors">
@@ -107,7 +110,7 @@ const RegionDetail = () => {
           </AnimatedSection>
         )}
       </div>
-    </div>
+    </div></PageTransition>
   );
 };
 
