@@ -11,13 +11,15 @@ const MissionDetails = () => {
 
   if (!pod) {
     return (
-      <PageTransition><div className="min-h-screen bg-background">
-        <Header />
-        <div className="container mx-auto px-4 py-20 text-center">
-          <p className="text-muted-foreground">Mission pod not found.</p>
-          <Link to="/" className="text-primary text-sm mt-4 inline-block hover:underline">← Back to Mission Control</Link>
+      <PageTransition>
+        <div className="min-h-screen bg-background">
+          <Header />
+          <div className="container mx-auto px-4 py-20 text-center">
+            <p className="text-muted-foreground">Mission pod not found.</p>
+            <Link to="/" className="text-primary text-sm mt-4 inline-block hover:underline">← Back to Mission Control</Link>
+          </div>
         </div>
-      </div>
+      </PageTransition>
     );
   }
 
