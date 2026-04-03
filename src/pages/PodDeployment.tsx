@@ -12,7 +12,7 @@ const steps = [
 ];
 
 const PodDeployment = () => (
-  <div className="min-h-screen bg-background">
+  <PageTransition><div className="min-h-screen bg-background">
     <Header />
     <div className="container mx-auto px-4 lg:px-6 py-8">
       <Link to="/" className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground mb-6 transition-colors">
