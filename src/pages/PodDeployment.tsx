@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Rocket, CheckCircle, Globe, Users, Shield } from "lucide-react";
 
