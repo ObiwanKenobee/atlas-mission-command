@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { ArrowLeft, MapPin, Users, Target, Shield } from "lucide-react";
 import { pods, deploymentZones, hiringPipeline } from "@/data/mockData";
 

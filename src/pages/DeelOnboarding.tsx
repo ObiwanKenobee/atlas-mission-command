@@ -81,7 +81,7 @@ const DeelOnboarding = () => (
         </div>
       </AnimatedSection>
     </div>
-  </div>
+  </div></PageTransition>
 );
 
 export default DeelOnboarding;

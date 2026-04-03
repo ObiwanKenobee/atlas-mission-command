@@ -50,7 +50,7 @@ const PodDeployment = () => (
         </div>
       </AnimatedSection>
     </div>
-  </div>
+  </div></PageTransition>
 );
 
 export default PodDeployment;

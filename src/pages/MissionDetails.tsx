@@ -11,7 +11,7 @@ const MissionDetails = () => {
 
   if (!pod) {
     return (
-      <div className="min-h-screen bg-background">
+      <PageTransition><div className="min-h-screen bg-background">
         <Header />
         <div className="container mx-auto px-4 py-20 text-center">
           <p className="text-muted-foreground">Mission pod not found.</p>
