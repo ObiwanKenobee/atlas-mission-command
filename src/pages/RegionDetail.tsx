@@ -110,7 +110,7 @@ const RegionDetail = () => {
           </AnimatedSection>
         )}
       </div>
-    </div>
+    </div></PageTransition>
   );
 };
 
