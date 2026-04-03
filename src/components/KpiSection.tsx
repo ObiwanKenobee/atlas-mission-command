@@ -1,13 +1,16 @@
 import KpiCard from "./KpiCard";
 import { kpiData } from "@/data/mockData";
+import StaggeredGrid, { StaggeredItem } from "./StaggeredGrid";
 
 const KpiSection = () => (
   <section className="container mx-auto px-4 lg:px-6">
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+    <StaggeredGrid className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
       {kpiData.map((kpi) => (
-        <KpiCard key={kpi.label} {...kpi} />
+        <StaggeredItem key={kpi.label}>
+          <KpiCard {...kpi} />
+        </StaggeredItem>
       ))}
-    </div>
+    </StaggeredGrid>
   </section>
 );
 

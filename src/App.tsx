@@ -4,6 +4,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
+import MissionDetails from "./pages/MissionDetails.tsx";
+import PodDeployment from "./pages/PodDeployment.tsx";
+import DeelOnboarding from "./pages/DeelOnboarding.tsx";
+import RegionDetail from "./pages/RegionDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -16,7 +20,10 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/mission/:podName" element={<MissionDetails />} />
+          <Route path="/deploy" element={<PodDeployment />} />
+          <Route path="/onboarding" element={<DeelOnboarding />} />
+          <Route path="/region/:regionName" element={<RegionDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
