@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { pods } from "@/data/mockData";
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { ArrowLeft, Users, MapPin, BarChart3 } from "lucide-react";
 
 const MissionDetails = () => {
