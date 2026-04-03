@@ -1,4 +1,5 @@
-import { Globe, Plus, Rocket, Users, Clock, ChevronDown } from "lucide-react";
+import { Globe, Plus, Rocket, Users, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const now = new Date();
@@ -10,7 +11,7 @@ const Header = () => {
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-6">
         {/* Left */}
         <div className="flex items-center gap-4">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
               <Globe className="h-4 w-4 text-primary-foreground" />
             </div>
@@ -18,7 +19,7 @@ const Header = () => {
               <h1 className="text-sm font-bold tracking-tight text-foreground">Atlas Sanctum</h1>
               <p className="text-[10px] font-medium text-muted-foreground tracking-widest uppercase">Mission Control</p>
             </div>
-          </div>
+          </Link>
           <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-secondary/20 px-2.5 py-0.5 text-[10px] font-semibold text-secondary uppercase tracking-wider">
             <span className="h-1.5 w-1.5 rounded-full bg-secondary animate-pulse-glow" />
             Live System
@@ -42,12 +43,12 @@ const Header = () => {
           <button className="hidden sm:flex items-center gap-1.5 rounded-lg border border-primary/30 bg-primary/10 px-3 py-1.5 text-xs font-medium text-primary hover:bg-primary/20 transition-colors">
             <Plus className="h-3.5 w-3.5" /> Create Mission
           </button>
-          <button className="hidden sm:flex items-center gap-1.5 rounded-lg border border-secondary/30 bg-secondary/10 px-3 py-1.5 text-xs font-medium text-secondary hover:bg-secondary/20 transition-colors">
+          <Link to="/deploy" className="hidden sm:flex items-center gap-1.5 rounded-lg border border-secondary/30 bg-secondary/10 px-3 py-1.5 text-xs font-medium text-secondary hover:bg-secondary/20 transition-colors">
             <Rocket className="h-3.5 w-3.5" /> Deploy Pod
-          </button>
-          <button className="flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/20 transition-colors">
+          </Link>
+          <Link to="/onboarding" className="flex items-center gap-1.5 rounded-lg border border-accent/30 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent hover:bg-accent/20 transition-colors">
             <Users className="h-3.5 w-3.5" /> Hire via Deel
-          </button>
+          </Link>
         </div>
       </div>
     </header>

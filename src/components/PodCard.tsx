@@ -1,4 +1,5 @@
 import { ArrowRight, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const colorMap: Record<string, { bar: string; badge: string }> = {
   primary: { bar: "bg-primary", badge: "bg-primary/10 text-primary" },
@@ -19,6 +20,8 @@ interface PodCardProps {
 
 const PodCard = ({ name, region, purpose, roles, status, progress, teamSize, color }: PodCardProps) => {
   const c = colorMap[color] || colorMap.primary;
+  const slug = name.toLowerCase().replace(/\s+/g, "-");
+
   return (
     <div className="glass rounded-xl p-5 flex flex-col hover:border-primary/30 transition-all duration-300 group">
       <div className="flex items-start justify-between mb-3">
@@ -34,7 +37,6 @@ const PodCard = ({ name, region, purpose, roles, status, progress, teamSize, col
           <span key={r} className="text-[10px] text-muted-foreground bg-muted rounded-md px-2 py-0.5">{r}</span>
         ))}
       </div>
-      {/* Progress */}
       <div className="mb-3">
         <div className="flex items-center justify-between mb-1">
           <span className="text-[10px] text-muted-foreground">Progress</span>
@@ -48,9 +50,9 @@ const PodCard = ({ name, region, purpose, roles, status, progress, teamSize, col
         <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
           <Users className="h-3 w-3" /> {teamSize} members
         </div>
-        <button className="flex items-center gap-1 text-[10px] font-medium text-primary hover:underline">
+        <Link to={`/mission/${slug}`} className="flex items-center gap-1 text-[10px] font-medium text-primary hover:underline">
           Open Pod <ArrowRight className="h-3 w-3" />
-        </button>
+        </Link>
       </div>
     </div>
   );
