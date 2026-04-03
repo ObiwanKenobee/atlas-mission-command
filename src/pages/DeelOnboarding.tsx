@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import AnimatedSection from "@/components/AnimatedSection";
+import PageTransition from "@/components/PageTransition";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, FileText, CreditCard, UserCheck, CheckCircle } from "lucide-react";
 import { hiringPipeline, hiringStages } from "@/data/mockData";
